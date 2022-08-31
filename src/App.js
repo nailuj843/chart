@@ -20,13 +20,14 @@ export const options = {
   },
 };
 
-export const data = {
+export const data =
+{
   datasets: [
     {
       label: 'A dataset',
-      data: Array.from({ length: 100 }, () => ({
-        x: faker.datatype.number({ min: 0, max: 100 }),
-        y: faker.datatype.number({ min: 0, max: 100 }),
+      data: Array.from({ length: 10 }, () => ({
+        x: faker.datatype.float({ min: 0, max: 10 }),
+        y: faker.datatype.float({ min: 0, max: 10 }),
       })),
       backgroundColor: 'rgba(255, 99, 132, 1)',
     },
@@ -34,5 +35,6 @@ export const data = {
 };
 
 export function App() {
+  console.log(JSON.stringify(data));
   return <Scatter options={options} data={data} />;
 }
